@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "description": "커스텀 트랙 예시: search with test param ",
+    "indices": [
+      {
+        "name": "text-index"
+      }
+    ],
+    "schedule":  [
+        {
+          "operation" : {
+          "name": "query_string",
+          "operation-type": "search",
+          "param-source": "my-custom-term-param-source"
+        },
+         
+          "clients": 20,
+          "target-throughput" : {{ t_qps|default(500) }},
+          "time-period" : {{ t_period|default(60) }}
+      }
+    ]
+}
+    
+  

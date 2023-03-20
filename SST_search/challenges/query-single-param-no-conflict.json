@@ -1,0 +1,12 @@
+{
+    "name": "query-single-param-no-conflict",
+    "default": true,
+    "index-settings": {
+        "index.number_of_replicas": 0,
+        "index.number_of_primary": 1
+      },
+      
+    "schedule": [
+      {% include "operations/query-single-word.json" %}
+    ]
+  }
